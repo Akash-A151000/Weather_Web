@@ -24,24 +24,24 @@ const GeolocationHandler = ({ selectedCity }) => {
     try {
       setLoading(true);
       const todayWeather = await axios.get(
-        `${import.meta.env.VITE_REACT_API_URL}/weather`,
+        `${import.meta.env.VITE_OPENWEATHER_API_URL}/weather`,
         {
           params: {
             lat: `${latitude}`,
             lon: `${longitude}`,
-            appid: `${import.meta.env.VITE_REACT_API_KEY}`,
+            appid: `${import.meta.env.VITE_OPENWEATHER_API_KEY}`,
             units: 'metric',
           },
           headers: { accept: 'application/json' },
         }
       );
       const forecast = await axios.get(
-        `${import.meta.env.VITE_REACT_API_URL}/forecast`,
+        `${import.meta.env.VITE_OPENWEATHER_API_URL}/forecast`,
         {
           params: {
             lat: `${latitude}`,
             lon: `${longitude}`,
-            appid: `${import.meta.env.VITE_REACT_API_KEY}`,
+            appid: `${import.meta.env.VITE_OPENWEATHER_API_KEY}`,
             units: 'metric',
           },
           headers: { accept: 'application/json' },
